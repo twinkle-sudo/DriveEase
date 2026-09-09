@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car rental</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                DriveEase
+            </div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/cars">Cars</a>
+                <a href="/#about">About</a>
+                <a href="/#contact">Contact</a>
+                <a href ="/cars" class="navBookButton">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-tagline">PREMIUM CAR RENTALS</p>
+
+                <h1>Rent Your Dream Car</h1>
+                <p class="hero-description">
+                    Explore our wide range of reliable and comfortable cars and enjoy your journey with ease.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="/cars">Explore Cars</a>
+                    <button>Book a Car</button>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="car.jpg" alt="Luxury rental car">
+            </div>
+        </section>
+
+        <section class="featured-cars" id="cars">
+            <div class="section-heading">
+                <p>OUR COLLECTION</p>
+                <h2>featured-cars</h2>
+                <p>
+                    Choose from our selection of comfortable and reliable cars for your next journey.
+                </p>
+            </div>
+
+            <div class="car-container">
+                <div class="car-card">
+                    <img src="/static/car1.jpg" alt="BMW 3 Sereis">
+                    <h3>BMW 3 Sereis</h3>
+                    <p>₹4,500 / day</p>
+                    <p>Petrol | 5 seats</p>
+                    <span class="available">Available</span>
+                    <button class="details-button">View Details</button>
+                </div>
+
+                <div class="car-card">
+                    <img src="/static/car2.jpg" alt="Mercedes-Benz C-Class">
+                    <h3>Mercedes-Benz C-Class</h3>
+                    <p>₹5,500 / day</p>
+                    <p>Petrol | 5 seats</p>
+                    <span class="available">Available</span>
+                    <button class="details-button">View Details</button>
+                </div>
+
+                <div class="car-card">
+                    <img src="/static/car3.jpg" alt="Toyota Fortuner">
+                    <h3>Toyota Fortuner</h3>
+                    <p>₹4,000 / day</p>
+                    <p>Desiel | 7 seats</p>
+                    <span class="unavailable">Currentlt-Unavailable</span>
+                    <button class="details-button">View Details</button>
+                </div>
+
+        </section>
+
+       <section class="about" id="about">
+
+    <div class="about-content">
+
+        <p class="about-tagline">
+            WHY CHOOSE DRIVE EASE
+        </p>
+
+        <h2>
+            Your Journey, Our Responsibility
+        </h2>
+
+        <p class="about-description">
+            At DriveEase, we make car rental simple, comfortable
+            and reliable. Whether you are planning a weekend trip,
+            a business journey or a family vacation, our carefully
+            maintained vehicles are ready for your journey.
+        </p>
+
+        <div class="about-features">
+
+            <div class="about-feature">
+                <h3>✓ Well Maintained</h3>
+                <p>
+                    Every car is regularly inspected and maintained.
+                </p>
+            </div>
+
+            <div class="about-feature">
+                <h3>✓ Easy Booking</h3>
+                <p>
+                    Find your car and book it in just a few steps.
+                </p>
+            </div>
+
+            <div class="about-feature">
+                <h3>✓ Reliable Service</h3>
+                <p>
+                    We focus on making every journey comfortable.
+                </p>
+            </div>
+
+        </div>
+
+        <a href="/static/cars" class="about-button">
+            Explore Our Cars
+        </a>
+
+    </div>
+
+</section>
+    </main>
+
+    <!-- Contact Section -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-heading">
+
+        <p>GET IN TOUCH</p>
+
+        <h2>Contact DriveEase</h2>
+
+        <p>
+            Have a question about our cars or your booking?
+            We are here to help.
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <h3>Let's Talk</h3>
+
+            <p>
+                Our team is ready to help you find the perfect
+                car for your journey.
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                support@driveease.com
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                +91 9876543219
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                New Delhi, India
+            </p>
+
+        </div>
+
+
+        <form class="contact-form" id="contactForm">
+
+            <div class="form-group">
+
+                <label for="contactName">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="contactName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="contactEmail">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="contactEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="contactMessage">
+                    Message
+                </label>
+
+                <textarea
+                    id="contactMessage"
+                    rows="5"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>DriveEase</h2>
+                <p>Making every journey comfortable, convenient and memorable.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">Cars</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@driveease.com</p>
+                <p>Phone: +91 9876543219</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 DriveEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="carModal">
+
+    <div class="modal-content">
+
+        <button class="close-modal">&times;</button>
+
+        <h2 id="modalCarName"></h2>
+
+        <p id="modalCarPrice"></p>
+
+        <p id="modalCarSpecs"></p>
+
+        <span id="modalAvailability"></span>
+
+        <button id="modalBookButton">Book This Car</button>
+
+    </div>
+
+</div>
+
+<div class="booking-modal" id="bookingModal">
+
+    <div class="booking-content">
+
+        <button class="close-booking">&times;</button>
+
+        <h2>Book Your Car</h2>
+
+        <p id="selectedCar"></p>
+
+        <form id="bookingForm">
+
+            <label for="customerName">Full Name</label>
+            <input 
+                type="text" 
+                id="customerName" 
+                placeholder="Enter your name"
+                required
+            >
+
+            <label for="customerEmail">Email</label>
+            <input 
+                type="email" 
+                id="customerEmail" 
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="pickupLocation">Pickup Location</label>
+            <input 
+                type="text" 
+                id="pickupLocation" 
+                placeholder="Enter pickup location"
+                required
+            >
+
+            <label for="pickupDate">Pickup Date</label>
+            <input 
+                type="date" 
+                id="pickupDate"
+                required
+            >
+
+            <label for="returnDate">Return Date</label>
+            <input 
+                type="date" 
+                id="returnDate"
+                required
+            >
+
+            <button type="submit">Confirm Booking</button>
+
+        </form>
+
+    </div>
+
+</div>
+    
+</body>
+</html>

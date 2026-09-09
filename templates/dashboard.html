@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | DriveEase</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- NAVBAR -->
+    <!-- ============================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            DriveEase
+        </div>
+
+        <div class="nav-links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('cars_page') }}">
+                Cars
+            </a>
+
+            <a href="{{ url_for('dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('my_bookings') }}">
+                My Bookings
+            </a>
+
+            <a href="{{ url_for('logout') }}"
+               class="logout-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ============================= -->
+    <!-- DASHBOARD HERO -->
+    <!-- ============================= -->
+
+    <section class="dashboard-hero">
+
+        <p class="dashboard-tag">
+            YOUR RENTALS
+        </p>
+
+        <h1>
+            My Bookings
+        </h1>
+
+        <p class="dashboard-welcome">
+            Welcome back,
+            <strong>{{ session["user_name"] }}</strong>!
+        </p>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- DASHBOARD CONTENT -->
+    <!-- ============================= -->
+
+    <main class="dashboard-container">
+
+        <!-- BOOKINGS SECTION -->
+
+        <section class="dashboard-bookings">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-tag">
+                        RENTAL HISTORY
+                    </p>
+
+                    <h2>
+                        My Bookings
+                    </h2>
+
+                </div>
+
+                <a href="{{ url_for('cars_page') }}"
+                   class="dashboard-book-btn">
+                    + Book a Car
+                </a>
+
+            </div>
+
+
+            <!-- JavaScript will insert bookings here -->
+
+            <div id="bookingsContainer"
+                 class="bookings-container">
+
+                <div class="booking-loading">
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Loading your bookings...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- PROFILE SECTION -->
+        <!-- ============================= -->
+
+        <aside class="dashboard-profile">
+
+            <div class="profile-card">
+
+                <div class="profile-icon">
+                    👤
+                </div>
+
+                <p class="profile-tag">
+                    MY PROFILE
+                </p>
+
+                <h2>
+                    {{ session["user_name"] }}
+                </h2>
+
+
+                <div class="profile-info">
+
+                    <div class="profile-item">
+
+                        <span>
+                            Name
+                        </span>
+
+                        <strong>
+                            {{ session["user_name"] }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <strong>
+                            {{ session["user_email"] }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Contact
+                        </span>
+
+                        <strong>
+                            {{ session["user_phone"] }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <a href="{{ url_for('logout') }}"
+                   class="profile-logout">
+
+                    Logout
+
+                </a>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer class="dashboard-footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h2>
+                    DriveEase
+                </h2>
+
+                <p>
+                    Your journey, our responsibility.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="{{ url_for('home') }}">
+                    Home
+                </a>
+
+                <a href="{{ url_for('cars_page') }}">
+                    Cars
+                </a>
+
+                <a href="{{ url_for('my_bookings') }}">
+                    My Bookings
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Account
+                </h3>
+
+                <a href="{{ url_for('dashboard') }}">
+                    Dashboard
+                </a>
+
+                <a href="{{ url_for('logout') }}">
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 DriveEase. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ============================= -->
+    <!-- DASHBOARD JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script>
+
+        async function loadBookings() {
+
+            const bookingsContainer =
+                document.getElementById("bookingsContainer");
+
+
+            try {
+
+                const response =
+                    await fetch("/api/my-bookings");
+
+
+                const data =
+                    await response.json();
+
+
+                console.log("Booking API response:", data);
+
+
+                /* ========================= */
+                /* LOGIN CHECK */
+                /* ========================= */
+
+                if (!data.success) {
+
+                    bookingsContainer.innerHTML = `
+
+                        <div class="booking-empty">
+
+                            <div class="booking-empty-icon">
+                                🚗
+                            </div>
+
+                            <h3>
+                                Please login first
+                            </h3>
+
+                            <p>
+                                Login to see your rental bookings.
+                            </p>
+
+                            <a href="/login"
+                               class="browse-cars-btn">
+
+                                Login
+
+                            </a>
+
+                        </div>
+
+                    `;
+
+                    return;
+                }
+
+
+                /* ========================= */
+                /* NO BOOKINGS */
+                /* ========================= */
+
+                if (!data.bookings ||
+                    data.bookings.length === 0) {
+
+                    bookingsContainer.innerHTML = `
+
+                        <div class="booking-empty">
+
+                            <div class="booking-empty-icon">
+                                🚗
+                            </div>
+
+                            <h3>
+                                No bookings yet
+                            </h3>
+
+                            <p>
+                                You haven't booked a car yet.
+                                Explore our collection and
+                                start your journey.
+                            </p>
+
+                            <a href="/cars"
+                               class="browse-cars-btn">
+
+                                Browse Cars
+
+                            </a>
+
+                        </div>
+
+                    `;
+
+                    return;
+                }
+
+
+                /* ========================= */
+                /* SHOW BOOKINGS */
+                /* ========================= */
+
+                bookingsContainer.innerHTML = "";
+
+
+                data.bookings.forEach(function(booking) {
+
+
+                    const bookingCard =
+                        document.createElement("div");
+
+
+                    bookingCard.className =
+                        "booking-card";
+
+
+                    /* ========================= */
+                    /* IMAGE PATH */
+                    /* ========================= */
+
+                    let imagePath =
+                        booking.image || "car1.jpg";
+
+
+                    if (!imagePath.startsWith("/")) {
+
+                        imagePath =
+                            "/static/" + imagePath;
+
+                    }
+
+
+                    /* ========================= */
+                    /* BOOKING CARD */
+                    /* ========================= */
+
+                    bookingCard.innerHTML = `
+
+                        <div class="booking-card-image">
+
+                            <img
+                                src="${imagePath}"
+                                alt="${booking.car_name || 'Rental Car'}"
+                            >
+
+                            <span class="booking-status">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+
+                        <div class="booking-card-content">
+
+                            <div class="booking-title-row">
+
+                                <h3>
+                                    ${booking.car_name || "Car Rental"}
+                                </h3>
+
+                                <span class="booking-id">
+                                    #${booking.id}
+                                </span>
+
+                            </div>
+
+
+                            <div class="booking-specs">
+
+                                <div class="booking-spec">
+
+                                    <span>
+                                        Fuel
+                                    </span>
+
+                                    <strong>
+                                        ${booking.fuel || "-"}
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="booking-spec">
+
+                                    <span>
+                                        Seats
+                                    </span>
+
+                                    <strong>
+                                        ${booking.seats || "-"}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="booking-dates">
+
+                                <div>
+
+                                    <span>
+                                        Pickup
+                                    </span>
+
+                                    <strong>
+                                        ${booking.pickup_date}
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        Return
+                                    </span>
+
+                                    <strong>
+                                        ${booking.return_date}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="booking-bottom">
+
+                                <div>
+
+                                    <span>
+                                        Rental Duration
+                                    </span>
+
+                                    <strong>
+                                        ${booking.rental_days} days
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="booking-total">
+
+                                    <span>
+                                        Total Price
+                                    </span>
+
+                                    <strong>
+                                        ₹${booking.total_price}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+
+                    bookingsContainer.appendChild(
+                        bookingCard
+                    );
+
+                });
+
+            }
+
+
+            catch (error) {
+
+                console.error(
+                    "Booking loading error:",
+                    error
+                );
+
+
+                bookingsContainer.innerHTML = `
+
+                    <div class="booking-error">
+
+                        <div>
+                            ⚠️
+                        </div>
+
+                        <h3>
+                            Unable to load bookings
+                        </h3>
+
+                        <p>
+                            Please refresh the page
+                            and try again.
+                        </p>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        /* ============================= */
+        /* LOAD BOOKINGS */
+        /* ============================= */
+
+        loadBookings();
+
+    </script>
+
+
+</body>
+
+</html>

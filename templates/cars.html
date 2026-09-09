@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DriveEase - Cars</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/cars.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+
+            <div class="logo">
+                DriveEase
+            </div>
+
+            <div class="nav-links">
+                <a href="/l">Home</a>
+                <a href="/cars">Cars</a>
+                <a href="/#about">About</a>
+                <a href="/#contact">Contact</a>
+
+                <a href="/cars" class="book-noe-button">Book Now</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- Cars Page Hero -->
+        <section class="cars-hero">
+
+            <div class="cars-heading">
+
+                <p>DRIVEEASE COLLECTION</p>
+
+                <h1>Find Your Perfect Car</h1>
+
+                <p>
+                    Explore our collection of reliable, comfortable
+                    and well-maintained cars.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Search and Filters -->
+        <section class="car-search">
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by car name..."
+                >
+
+            </div>
+
+
+            <div class="filters">
+
+                <select id="fuelFilter">
+
+                    <option value="all">All Fuel Types</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Electric">Electric</option>
+
+                </select>
+
+
+                <select id="seatFilter">
+
+                    <option value="all">All Seats</option>
+                    <option value="5">5 Seats</option>
+                    <option value="7">7 Seats</option>
+                    <option value="4">4 Seats</option>
+                    <option value="2">2 seats</option>
+
+                </select>
+
+
+                <select id="priceFilter">
+
+                    <option value="all">Sort By Price</option>
+                    <option value="low">Low to High</option>
+                    <option value="high">High to Low</option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- Car Listing -->
+        <section class="car-listing">
+
+            <div class="listing-heading">
+
+                <h2>Available Cars</h2>
+
+                <p id="carCount">
+                    6 cars available
+                </p>
+
+            </div>
+
+
+            <div class="cars-grid" id="carsGrid">
+
+
+                <!-- BMW -->
+                <div
+                    class="listing-card"
+                    data-id="1"
+                    data-name="BMW 3 Series"
+                    data-fuel="Petrol"
+                    data-seats="5"
+                    data-price="4500"
+                >
+
+                    <img
+                        src="/static/car1.jpg"
+                        alt="BMW 3 Series"
+                    >
+
+                    <div class="listing-card-content">
+
+                        <h3>BMW 3 Series</h3>
+
+                        <p>Petrol | 5 Seats</p>
+
+                        <p class="car-price">
+                            ₹4,500 / day
+                        </p>
+
+                        <span class="available">
+                            Available
+                        </span>
+
+                        <button class="listing-details">
+                            View Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Mercedes -->
+                <div
+                    class="listing-card"
+                    data-id="2"
+                    data-name="Mercedes-Benz C-Class"
+                    data-fuel="Petrol"
+                    data-seats="5"
+                    data-price="5500"
+                >
+
+                    <img
+                        src="/static/car2.jpg"
+                        alt="Mercedes-Benz C-Class"
+                    >
+
+                    <div class="listing-card-content">
+
+                        <h3>Mercedes-Benz C-Class</h3>
+
+                        <p>Petrol | 5 Seats</p>
+
+                        <p class="car-price">
+                            ₹5,500 / day
+                        </p>
+
+                        <span class="available">
+                            Available
+                        </span>
+
+                        <button class="listing-details">
+                            View Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Toyota -->
+                <div
+                    class="listing-card"
+                    data-id="3"
+                    data-name="Toyota Fortuner"
+                    data-fuel="Diesel"
+                    data-seats="7"
+                    data-price="4000"
+                >
+
+                    <img
+                        src="/static/car3.jpg"
+                        alt="Toyota Fortuner"
+                    >
+
+                    <div class="listing-card-content">
+
+                        <h3>Toyota Fortuner</h3>
+
+                        <p>Diesel | 7 Seats</p>
+
+                        <p class="car-price">
+                            ₹4,000 / day
+                        </p>
+
+                        <span class="unavailable">
+                            Currently Unavailable
+                        </span>
+
+                        <button
+                            class="listing-details"
+                            disabled
+                        >
+                            Currently Unavailable
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- lamborghini -->
+                <div
+                    class="listing-card"
+                    data-id="4"
+                    data-name="Lamborghini Urus"
+                    data-fuel="Diesel"
+                    data-seats="5"
+                    data-price="45000"
+                >
+
+                    <img
+                        src="/static/car4.jpg"
+                        alt="Lamborghini Urus"
+                    >
+
+                    <div class="listing-card-content">
+
+                        <h3>Lamborghini Urus</h3>
+
+                        <p>Diesel | 5 Seats</p>
+
+                        <p class="car-price">
+                            ₹45,000 / day
+                        </p>
+
+                        <span class="available">
+                            Available
+                        </span>
+
+                        <button class="listing-details">
+                            View Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ferrari -->
+                <div
+                    class="listing-card"
+                    data-id="5"
+                    data-name="Ferrari Roma"
+                    data-fuel="Petrol"
+                    data-seats="2"
+                    data-price="50000"
+                >
+
+                    <img
+                        src="/static/car5.jpg"
+                        alt="Ferrari Roma"
+                    >
+
+                    <div class="listing-card-content">
+
+                        <h3>Ferrari Roma</h3>
+
+                        <p>Petrol | 2 Seats</p>
+
+                        <p class="car-price">
+                            ₹50,000 / day
+                        </p>
+
+                        <span class="available">
+                            Available
+                        </span>
+
+                        <button class="listing-details">
+                            View Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- porsche -->
+                <div
+                    class="listing-card"
+                    data-id="6"
+                    data-name="Porsche 911 Carrera"
+                    data-fuel="Diesel"
+                    data-seats="4"
+                    data-price="32000"
+                >
+
+                    <img
+                        src="/static/car6.jpg"
+                        alt="Porsche 911 Carrera"
+                    >
+
+                    <div class="listing-card-content">
+
+                        <h3>Porsche 911 Carrera</h3>
+
+                        <p>Diesel | 4 Seats</p>
+
+                        <p class="car-price">
+                            ₹32,000 / day
+                        </p>
+
+                        <span class="available">
+                            Available
+                        </span>
+
+                        <button class="listing-details">
+                            View Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer id="contact">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h2>DriveEase</h2>
+
+                <p>
+                    Making every journey comfortable,
+                    convenient and memorable.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="cars.html">Cars</a>
+
+                <a href="index.html#about">About</a>
+
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>Contact Us</h3>
+
+                <p>
+                    Email: support@driveease.com
+                </p>
+
+                <p>
+                    Phone: +91 9876543219
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 DriveEase. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Car Details Modal -->
+
+<div class="cars-modal" id="carsModal">
+
+    <div class="cars-modal-content">
+
+        <button class="cars-modal-close" id="carsModalClose">
+            &times;
+        </button>
+
+        <img id="modalImage" src="" alt="Selected car">
+
+        <div class="cars-modal-info">
+
+            <p class="modal-label">
+                CAR DETAILS
+            </p>
+
+            <h2 id="modalName"></h2>
+
+            <p id="modalFuel"></p>
+
+            <p id="modalSeats"></p>
+
+            <p id="modalPrice"></p>
+
+            <span id="modalStatus"></span>
+
+            <button type="button" id="modalBook">
+                Book This Car
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================================
+     BOOKING MODAL
+================================ -->
+
+<div class="booking-modal" id="bookingModal">
+
+    <div class="booking-box">
+
+        <button
+            type="button"
+            class="booking-close"
+            id="bookingClose"
+        >
+            ×
+        </button>
+
+        <p class="booking-tag">
+            COMPLETE YOUR BOOKING
+        </p>
+
+        <h2>Book Your Car</h2>
+
+        <p id="bookingCarName">
+            Selected Car:
+        </p>
+
+
+        <form id="bookingForm">
+
+            <label for="customerName">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your full name"
+                required
+            >
+
+
+            <label for="customerPhone">
+                Contact Number
+            </label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Enter your contact number"
+                required
+            >
+
+
+            <div class="date-row">
+
+                <div>
+
+                    <label for="pickupDate">
+                        Pickup Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="pickupDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label for="returnDate">
+                        Return Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="returnDate"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="booking-summary">
+
+                <div>
+                    <span>Rental Duration</span>
+
+                    <strong id="rentalDays">
+                        0 days
+                    </strong>
+                </div>
+
+
+                <div>
+                    <span>Total Price</span>
+
+                    <strong id="totalPrice">
+                        ₹0
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="confirm-booking"
+            >
+                Confirm Booking
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

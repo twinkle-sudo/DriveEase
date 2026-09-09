@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DriveEase</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">DriveEase</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/cars">Cars</a>
+        <a href="/register">Register</a>
+    </div>
+</nav>
+
+<section class="auth-section">
+
+    <div class="auth-box">
+
+        <p class="auth-tag">WELCOME BACK</p>
+
+        <h1>Login to DriveEase</h1>
+
+        <p class="auth-subtitle">
+            Login to manage your car bookings.
+        </p>
+
+        <form id="loginForm">
+
+            <label for="loginEmail">Email Address</label>
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="loginPassword">Password</label>
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+                required
+            >
+
+            <button type="submit" class="auth-button">
+                Login
+            </button>
+
+        </form>
+
+        <p class="auth-footer">
+            Don't have an account?
+            <a href="/register">Create Account</a>
+        </p>
+
+    </div>
+
+</section>
+
+<script>
+const loginForm = document.querySelector("#loginForm");
+
+loginForm.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const email = document.querySelector("#loginEmail").value;
+    const password = document.querySelector("#loginPassword").value;
+
+    try {
+
+        const response = await fetch("/api/login", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+
+            alert("Login successful!\\n\\nWelcome, " + data.user.name);
+
+            window.location.href = "/";
+
+        } else {
+
+            alert(data.message);
+        }
+
+    } catch (error) {
+
+        alert("Something went wrong. Please try again.");
+
+        console.error(error);
+    }
+
+});
+</script>
+
+</body>
+</html>

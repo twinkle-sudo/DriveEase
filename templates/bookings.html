@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings - DriveEase</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        DriveEase
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/cars">
+            Cars
+        </a>
+
+        <a href="/my-bookings">
+            My Bookings
+        </a>
+
+        <a href="/logout">
+            Logout
+        </a>
+
+    </div>
+
+</nav>
+
+
+<section class="bookings-section">
+
+    <div class="bookings-container">
+
+        <p class="auth-tag">
+            DRIVEeASE DASHBOARD
+        </p>
+
+        <h1>
+            Welcome, {{ user_name }}
+        </h1>
+
+        <p class="bookings-subtitle">
+            Here you can view all your car bookings.
+        </p>
+
+
+        {% if bookings %}
+
+        <div class="bookings-grid">
+
+            {% for booking in bookings %}
+
+            <div class="booking-card">
+
+                <img
+                    src="{{ url_for('static', filename=booking['image']) }}"
+                    alt="{{ booking['car_name'] }}"
+                >
+
+                <div class="booking-card-content">
+
+                    <h2>
+                        {{ booking['car_name'] }}
+                    </h2>
+
+                    <span class="booking-status">
+                        Confirmed
+                    </span>
+
+                    <div class="booking-info">
+
+                        <p>
+                            <strong>Pickup Date:</strong>
+                            {{ booking['pickup_date'] }}
+                        </p>
+
+                        <p>
+                            <strong>Return Date:</strong>
+                            {{ booking['return_date'] }}
+                        </p>
+
+                        <p>
+                            <strong>Rental Duration:</strong>
+                            {{ booking['rental_days'] }} days
+                        </p>
+
+                        <p>
+                            <strong>Total Price:</strong>
+                            ₹{{ "{:,}".format(booking['total_price']) }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="no-bookings">
+
+            <h2>
+                No Bookings Yet
+            </h2>
+
+            <p>
+                You haven't booked a car yet.
+            </p>
+
+            <a href="/cars" class="auth-button">
+                Explore Cars
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,3758 @@
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+button {
+    font-family: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+header {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #222222;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #555555;
+}
+
+.nav-links button {
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* ================================
+   HOMEPAGE HERO
+================================ */
+
+.hero {
+    max-width: 1200px;
+    min-height: 450px;
+    margin: auto;
+    padding: 60px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-tagline {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 550px;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-buttons button,
+.hero-buttons a {
+    display: inline-block;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    height: 280px;
+    object-fit: contain;
+}
+
+
+/* ================================
+   FEATURED CARS
+================================ */
+
+.featured-cars {
+    max-width: 1200px;
+    margin: auto;
+    padding: 70px 30px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.car-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.car-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+    overflow: hidden;
+    padding-bottom: 20px;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.car-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.car-card h3,
+.car-card p,
+.car-card span,
+.car-card button {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.car-card h3 {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.car-card p {
+    margin-bottom: 8px;
+}
+
+
+/* ================================
+   AVAILABILITY
+================================ */
+
+.available,
+.unavailable {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.available {
+    background-color: #e6f7ed;
+    color: #16834b;
+}
+
+.unavailable {
+    background-color: #fdeaea;
+    color: #c0392b;
+}
+
+
+/* ================================
+   CARD BUTTON
+================================ */
+
+.car-card button {
+    display: block;
+
+    width: calc(100% - 40px);
+
+    padding: 12px;
+
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* ================================
+   ABOUT
+================================ */
+
+.about {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 30px;
+}
+
+.about-content {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content > p:first-child {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.about-content h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.about-content button {
+    padding: 13px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    margin-top: 40px;
+    padding-top: 50px;
+
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 0 30px 40px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer-brand h2 {
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    line-height: 1.6;
+}
+
+.footer-links,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact p {
+    line-height: 1.5;
+}
+
+.footer-bottom {
+    text-align: center;
+
+    padding: 20px;
+
+    border-top: 1px solid #333333;
+}
+
+
+/* ================================
+   CAR DETAILS MODAL
+================================ */
+
+.modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+
+    width: 90%;
+    max-width: 500px;
+
+    padding: 35px;
+
+    background-color: #ffffff;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.close-modal {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    border: none;
+    background: none;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+}
+
+#modalAvailability {
+    display: inline-block;
+
+    margin: 10px 0 20px;
+}
+
+#modalBookButton {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+/* ================================
+   FINAL BOOKING MODAL
+================================ */
+
+.booking-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 9999;
+}
+
+.booking-box {
+    position: relative;
+
+    width: 90%;
+    max-width: 600px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background-color: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 40px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.booking-close {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #f2f2f2;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.booking-tag {
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.booking-box h2 {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+#bookingCarName {
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+#bookingForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+#bookingForm label {
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-top: 5px;
+}
+
+#bookingForm input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+#bookingForm input:focus {
+    border-color: #5555aa;
+}
+
+.date-row {
+    display: flex;
+
+    gap: 15px;
+}
+
+.date-row > div {
+    flex: 1;
+}
+
+.booking-summary {
+    margin-top: 20px;
+
+    padding: 18px;
+
+    background-color: #f5f5f5;
+
+    border-radius: 10px;
+}
+
+.booking-summary div {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.booking-summary div:last-child {
+    margin-bottom: 0;
+}
+
+#rentalDays,
+#totalPrice {
+    font-weight: bold;
+}
+
+#totalPrice {
+    font-size: 20px;
+}
+
+.confirm-booking {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+
+    .booking-box {
+        padding: 25px;
+    }
+
+    .date-row {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .booking-box h2 {
+        font-size: 25px;
+    }
+}
+
+/* ==================================================
+   CARS PAGE
+================================================== */
+
+
+/* Cars page hero */
+
+.cars-hero {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 70px 30px 50px;
+
+    text-align: center;
+}
+
+.cars-heading p:first-child {
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.cars-heading h1 {
+    font-size: 48px;
+
+    margin-bottom: 20px;
+}
+
+.cars-heading p:last-child {
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   SEARCH & FILTER
+================================ */
+
+.car-search {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 0 30px 50px;
+}
+
+.search-box {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #555555;
+}
+
+.filters {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.filters select {
+    flex: 1;
+
+    min-width: 180px;
+
+    padding: 13px 15px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+/* ================================
+   CAR LISTING
+================================ */
+
+.car-listing {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 0 30px 80px;
+}
+
+.listing-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.listing-heading h2 {
+    font-size: 32px;
+}
+
+.listing-heading p {
+    font-size: 15px;
+}
+
+
+/* ================================
+   CARS GRID
+================================ */
+
+.cars-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ================================
+   LISTING CARD
+================================ */
+
+.listing-card {
+    background-color: #ffffff;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.listing-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* IMPORTANT:
+   This controls images on cars.html
+*/
+
+.listing-card img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Listing content */
+
+.listing-card-content {
+    padding: 20px;
+}
+
+.listing-card-content h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.listing-card-content p {
+    margin-bottom: 8px;
+}
+
+.car-price {
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* Listing buttons */
+
+.listing-details {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    font-size: 15px;
+}
+
+.listing-details:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.6;
+}
+
+
+/* ==================================================
+   MOBILE RESPONSIVE
+================================================== */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    nav {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    /* Homepage hero */
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .hero-image img {
+        max-width: 400px;
+
+        height: 220px;
+    }
+
+
+    /* Featured cars */
+
+    .car-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* About */
+
+    .about-content h2 {
+        font-size: 32px;
+    }
+
+
+    /* Footer */
+
+    .footer-content {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .footer-links,
+    .footer-contact {
+        align-items: center;
+    }
+
+
+    /* Cars page */
+
+    .cars-heading h1 {
+        font-size: 38px;
+    }
+
+    .cars-heading p:last-child {
+        font-size: 16px;
+    }
+
+
+    /* Search */
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters select {
+        width: 100%;
+    }
+
+
+    /* Listing */
+
+    .cars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .listing-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media (max-width: 480px) {
+
+    nav {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .featured-cars,
+    .about,
+    .car-search,
+    .car-listing {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .cars-heading h1 {
+        font-size: 32px;
+    }
+
+    .car-card img,
+    .listing-card img {
+        height: 200px;
+    }
+
+}
+
+/* ================================
+   CARS DETAILS MODAL
+================================ */
+
+.cars-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 2000;
+}
+
+.cars-modal-content {
+    position: relative;
+
+    width: 90%;
+
+    max-width: 750px;
+
+    background-color: #ffffff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.cars-modal-content img {
+    width: 50%;
+
+    height: 400px;
+
+    object-fit: cover;
+}
+
+.cars-modal-info {
+    width: 50%;
+
+    padding: 40px;
+}
+
+.modal-label {
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.cars-modal-info h2 {
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+.cars-modal-info p {
+    margin-bottom: 12px;
+}
+
+#modalPrice {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-top: 20px;
+}
+
+#modalStatus {
+    display: inline-block;
+
+    margin: 10px 0 25px;
+}
+
+#modalBook {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+.cars-modal-close {
+    position: absolute;
+
+    top: 12px;
+
+    right: 15px;
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    z-index: 2;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .cars-modal-content {
+        flex-direction: column;
+    }
+
+    .cars-modal-content img {
+        width: 100%;
+
+        height: 220px;
+    }
+
+    .cars-modal-info {
+        width: 100%;
+
+        padding: 25px;
+    }
+
+    .cars-modal-info h2 {
+        font-size: 25px;
+    }
+
+}
+
+/* ================================
+   BOOKING MODAL
+================================ */
+
+.booking-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 3000;
+}
+
+.booking-modal-content {
+    position: relative;
+
+    width: 90%;
+
+    max-width: 600px;
+
+    background-color: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 40px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.booking-close {
+    position: absolute;
+
+    top: 15px;
+
+    right: 18px;
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #f2f2f2;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.booking-modal-content h2 {
+    margin-bottom: 10px;
+
+    font-size: 30px;
+}
+
+#bookingCarName {
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+.form-group input {
+    padding: 13px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #5555aa;
+}
+
+.form-row {
+    display: flex;
+
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.booking-summary {
+    background-color: #f5f5f5;
+
+    border-radius: 10px;
+
+    padding: 18px;
+
+    margin: 20px 0;
+}
+
+.booking-summary p {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+}
+
+.booking-summary p:last-child {
+    margin-bottom: 0;
+}
+
+#totalPrice {
+    font-size: 20px;
+}
+
+.confirm-booking {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+
+    .booking-modal-content {
+        padding: 25px;
+    }
+
+    .form-row {
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+}
+
+/* ================================
+   ABOUT SECTION
+================================ */
+
+.about {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 30px;
+
+    text-align: center;
+}
+
+.about-content {
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.about-tagline {
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.about-content h2 {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.about-description {
+    max-width: 750px;
+
+    margin: 0 auto 40px;
+
+    line-height: 1.7;
+
+    font-size: 17px;
+}
+
+.about-features {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 40px;
+}
+
+.about-feature {
+    padding: 25px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 12px;
+
+    background-color: #fafafa;
+}
+
+.about-feature h3 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+}
+
+.about-feature p {
+    line-height: 1.5;
+
+    font-size: 14px;
+}
+
+.about-button {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* ABOUT MOBILE */
+
+@media (max-width: 700px) {
+
+    .about {
+        padding: 70px 20px;
+    }
+
+    .about-content h2 {
+        font-size: 30px;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ================================
+   CONTACT SECTION
+================================ */
+
+.contact {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 90px 30px;
+}
+
+.contact-heading {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 50px;
+}
+
+.contact-heading > p:first-child {
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.contact-heading h2 {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.contact-heading p {
+    line-height: 1.6;
+}
+
+.contact-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    max-width: 950px;
+
+    margin: auto;
+}
+
+.contact-info {
+    padding: 30px;
+}
+
+.contact-info h3 {
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+.contact-form {
+    padding: 30px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 15px;
+
+    background-color: #fafafa;
+}
+
+.contact-form textarea {
+    resize: vertical;
+
+    font-family: Arial, sans-serif;
+}
+
+.contact-form button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+/* CONTACT MOBILE */
+
+@media (max-width: 700px) {
+
+    .contact {
+        padding: 70px 20px;
+    }
+
+    .contact-heading h2 {
+        font-size: 30px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 20px;
+    }
+
+}
+
+/* ================================
+   BOOKING MODAL
+================================ */
+
+.booking-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+}
+
+
+.booking-box {
+    width: 90%;
+    max-width: 600px;
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background: white;
+
+    padding: 35px;
+    border-radius: 18px;
+
+    position: relative;
+}
+
+
+.booking-close {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    border: none;
+    background: none;
+
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+.booking-tag {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+
+.booking-box h2 {
+    margin: 10px 0 10px;
+    font-size: 32px;
+}
+
+
+#bookingCarName {
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+
+.booking-box label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+
+.booking-box input {
+    width: 100%;
+    padding: 13px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+
+.date-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+.booking-summary {
+    margin-top: 25px;
+    padding: 20px;
+
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+
+.booking-summary div {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+
+.booking-summary div:last-child {
+    margin-bottom: 0;
+}
+
+
+.confirm-booking {
+    width: 100%;
+
+    margin-top: 25px;
+    padding: 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* =================================
+   PROFESSIONAL CARS PAGE
+================================= */
+
+.cars-page {
+    background: #f7f8fc;
+}
+
+
+/* Cars page heading */
+
+.cars-hero {
+    text-align: center;
+    padding: 70px 20px 35px;
+}
+
+.cars-hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.cars-hero p {
+    color: #666;
+    font-size: 17px;
+}
+
+
+/* Search and filters */
+
+.search-filter {
+    max-width: 1100px;
+    margin: 0 auto 45px;
+    padding: 0 20px;
+}
+
+.search-filter input,
+.search-filter select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d9dce5;
+    border-radius: 10px;
+    background: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-filter input {
+    margin-bottom: 15px;
+}
+
+.filter-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.search-filter input:focus,
+.search-filter select:focus {
+    border-color: #4f46e5;
+}
+
+
+/* Available cars */
+
+.available-section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px 80px;
+}
+
+.available-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.available-header h2 {
+    font-size: 28px;
+}
+
+#carCount {
+    color: #666;
+}
+
+
+/* Cars grid */
+
+#carsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* Car cards */
+
+.listing-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.listing-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Car images */
+
+.listing-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Card content */
+
+.listing-card h3 {
+    font-size: 20px;
+    margin: 18px 18px 8px;
+}
+
+.listing-card p {
+    margin: 6px 18px;
+    color: #666;
+}
+
+.listing-card span {
+    display: inline-block;
+    margin: 12px 18px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* Details button */
+
+.listing-details {
+    width: calc(100% - 36px);
+    margin: 5px 18px 20px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #eef2ff;
+    color: #3730a3;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.listing-details:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+
+/* Available */
+
+.available {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+
+/* Unavailable */
+
+.unavailable {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 900px) {
+
+    #carsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cars-hero {
+        padding-top: 45px;
+    }
+
+    .cars-hero h1 {
+        font-size: 32px;
+    }
+
+    .filter-row {
+        grid-template-columns: 1fr;
+    }
+
+    #carsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .listing-card img {
+        height: 220px;
+    }
+
+}
+
+.book-now-button {
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* ================================
+   AUTH / REGISTER
+================================ */
+
+.auth-section {
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 60px 20px;
+
+    background-color: #f8f8f8;
+}
+
+.auth-box {
+    width: 90%;
+
+    max-width: 500px;
+
+    background-color: #ffffff;
+
+    padding: 45px;
+
+    border-radius: 18px;
+
+    border: 1px solid #e5e5e5;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.auth-tag {
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.auth-box h1 {
+    text-align: center;
+
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+.auth-description {
+    text-align: center;
+
+    color: #666666;
+
+    margin-bottom: 30px;
+}
+
+.auth-box .form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 18px;
+}
+
+.auth-box .form-group label {
+    font-weight: bold;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+.auth-box .form-group input {
+    padding: 13px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.auth-box .form-group input:focus {
+    border-color: #5555aa;
+}
+
+.auth-box .confirm-booking {
+    margin-top: 10px;
+}
+
+.auth-footer {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #666666;
+}
+
+.auth-footer a {
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+
+    .auth-box {
+        padding: 30px 22px;
+    }
+
+    .auth-box h1 {
+        font-size: 27px;
+    }
+
+}
+
+/* =========================
+   AUTH PAGES
+========================= */
+
+.auth-section {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: #f8f7ff;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 520px;
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.auth-tag {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #5b3cc4;
+    margin-bottom: 10px;
+}
+
+.auth-box h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 12px;
+    color: #202040;
+}
+
+.auth-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.auth-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-box label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.auth-box input:focus {
+    border-color: #6c4ed9;
+}
+
+.auth-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #5b3cc4;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth-button:hover {
+    background: #4930a5;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #666;
+}
+
+.auth-footer a {
+    color: #5b3cc4;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* =========================
+   MY BOOKINGS
+========================= */
+
+.bookings-section {
+    min-height: 80vh;
+    padding: 70px 20px;
+    background: #f8f7ff;
+}
+
+.bookings-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.bookings-container h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #202040;
+    margin-bottom: 10px;
+}
+
+.bookings-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.bookings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.booking-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.booking-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.booking-card-content {
+    padding: 25px;
+}
+
+.booking-card-content h2 {
+    color: #202040;
+    margin-bottom: 12px;
+}
+
+.booking-status {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 20px;
+    background: #dff5d8;
+    color: #3d8b35;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.booking-info p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.no-bookings {
+    background: white;
+    max-width: 550px;
+    margin: 50px auto;
+    padding: 50px;
+    text-align: center;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.no-bookings h2 {
+    color: #202040;
+    margin-bottom: 10px;
+}
+
+.no-bookings p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.no-bookings .auth-button {
+    display: inline-block;
+    text-decoration: none;
+    width: auto;
+    padding: 12px 25px;
+}
+
+
+@media (max-width: 700px) {
+
+    .bookings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bookings-container h1 {
+        font-size: 32px;
+    }
+
+}
+
+/* ================================
+   MY BOOKINGS
+================================ */
+
+.my-bookings {
+    margin-top: 50px;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.dashboard-tag {
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    color: #172554;
+    margin: 0;
+}
+
+#bookingsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.booking-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+}
+
+.booking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+.booking-info h3 {
+    font-size: 23px;
+    color: #172554;
+    margin-bottom: 18px;
+}
+
+.booking-info p {
+    margin: 9px 0;
+    color: #64748b;
+    font-size: 15px;
+}
+
+.booking-info strong {
+    color: #334155;
+}
+
+.booking-info p:last-child {
+    font-size: 18px;
+    color: #2563eb;
+    margin-top: 18px;
+}
+
+.no-bookings {
+    background: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+}
+
+.no-bookings h3 {
+    color: #172554;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.no-bookings p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.dashboard-book-button {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.dashboard-book-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    #bookingsContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+}
+
+.logout-button {
+    background: #1769e0;
+    color: white !important;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.logout-button:hover {
+    opacity: 0.9;
+}
+
+/* =========================================================
+   DRIVE EASE DASHBOARD
+   ========================================================= */
+
+
+/* ================================
+   DASHBOARD HERO
+   ================================ */
+
+.dashboard-hero {
+
+    text-align: center;
+
+    padding: 65px 20px 45px;
+
+    background: linear-gradient(
+        135deg,
+        #eef5ff,
+        #ffffff
+    );
+
+}
+
+
+.dashboard-tag {
+
+    color: #155eef;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.dashboard-hero h1 {
+
+    margin: 0;
+
+    color: #172554;
+
+    font-size: 42px;
+
+}
+
+
+.dashboard-welcome {
+
+    margin-top: 12px;
+
+    color: #64748b;
+
+    font-size: 17px;
+
+}
+
+
+.dashboard-welcome strong {
+
+    color: #155eef;
+
+}
+
+
+/* ================================
+   MAIN DASHBOARD
+   ================================ */
+
+.dashboard-container {
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 50px 25px 80px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(280px, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* ================================
+   SECTION HEADING
+   ================================ */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.section-tag {
+
+    margin: 0 0 5px;
+
+    color: #155eef;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.section-heading h2 {
+
+    margin: 0;
+
+    color: #172554;
+
+    font-size: 30px;
+
+}
+
+
+/* ================================
+   BOOK BUTTON
+   ================================ */
+
+.dashboard-book-btn {
+
+    text-decoration: none;
+
+    background: #155eef;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+    white-space: nowrap;
+
+}
+
+
+.dashboard-book-btn:hover {
+
+    background: #0b4dcc;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ================================
+   BOOKINGS CONTAINER
+   ================================ */
+
+.bookings-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+
+/* ================================
+   BOOKING CARD
+   ================================ */
+
+.booking-card {
+
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.08);
+
+    display: grid;
+
+    grid-template-columns: 260px 1fr;
+
+    transition: 0.3s;
+
+}
+
+
+.booking-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.12);
+
+}
+
+
+/* ================================
+   BOOKING IMAGE
+   ================================ */
+
+.booking-card-image {
+
+    position: relative;
+
+    min-height: 250px;
+
+    overflow: hidden;
+
+}
+
+
+.booking-card-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 250px;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.booking-status {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    background: #16a34a;
+
+    color: white;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+/* ================================
+   BOOKING CONTENT
+   ================================ */
+
+.booking-card-content {
+
+    padding: 25px;
+
+}
+
+
+.booking-title-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.booking-title-row h3 {
+
+    margin: 0;
+
+    color: #172554;
+
+    font-size: 25px;
+
+}
+
+
+.booking-id {
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    background: #f1f5f9;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+}
+
+
+/* ================================
+   SPECS
+   ================================ */
+
+.booking-specs {
+
+    display: flex;
+
+    gap: 35px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+
+.booking-spec {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.booking-spec span {
+
+    color: #64748b;
+
+    font-size: 13px;
+
+}
+
+
+.booking-spec strong {
+
+    color: #1e293b;
+
+    font-size: 15px;
+
+}
+
+
+/* ================================
+   DATES
+   ================================ */
+
+.booking-dates {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+
+.booking-dates div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.booking-dates span {
+
+    color: #64748b;
+
+    font-size: 13px;
+
+}
+
+
+.booking-dates strong {
+
+    color: #1e293b;
+
+    font-size: 14px;
+
+}
+
+
+/* ================================
+   BOOKING BOTTOM
+   ================================ */
+
+.booking-bottom {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 18px;
+
+}
+
+
+.booking-bottom > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.booking-bottom span {
+
+    color: #64748b;
+
+    font-size: 13px;
+
+}
+
+
+.booking-bottom strong {
+
+    color: #172554;
+
+    font-size: 16px;
+
+}
+
+
+.booking-total {
+
+    text-align: right;
+
+}
+
+
+.booking-total strong {
+
+    color: #155eef;
+
+    font-size: 22px;
+
+}
+
+
+/* ================================
+   EMPTY BOOKINGS
+   ================================ */
+
+.booking-empty {
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.06);
+
+}
+
+
+.booking-empty-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.booking-empty h3 {
+
+    margin: 0 0 10px;
+
+    color: #172554;
+
+    font-size: 25px;
+
+}
+
+
+.booking-empty p {
+
+    max-width: 500px;
+
+    margin: 0 auto 25px;
+
+    color: #64748b;
+
+    line-height: 1.6;
+
+}
+
+
+.browse-cars-btn {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #155eef;
+
+    color: white;
+
+    padding: 12px 24px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+}
+
+
+.browse-cars-btn:hover {
+
+    background: #0b4dcc;
+
+}
+
+
+/* ================================
+   LOADING
+   ================================ */
+
+.booking-loading {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 60px;
+
+    text-align: center;
+
+    border: 1px solid #e5e7eb;
+
+}
+
+
+.loading-spinner {
+
+    width: 35px;
+
+    height: 35px;
+
+    border: 4px solid #e5e7eb;
+
+    border-top: 4px solid #155eef;
+
+    border-radius: 50%;
+
+    margin: 0 auto 15px;
+
+    animation: dashboardSpin 1s linear infinite;
+
+}
+
+
+@keyframes dashboardSpin {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* ================================
+   ERROR
+   ================================ */
+
+.booking-error {
+
+    background: #fff7ed;
+
+    border: 1px solid #fed7aa;
+
+    border-radius: 18px;
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+}
+
+
+.booking-error > div {
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.booking-error h3 {
+
+    color: #9a3412;
+
+    margin-bottom: 8px;
+
+}
+
+
+.booking-error p {
+
+    color: #c2410c;
+
+}
+
+
+/* ================================
+   PROFILE CARD
+   ================================ */
+
+.profile-card {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.07);
+
+    position: sticky;
+
+    top: 100px;
+
+}
+
+
+.profile-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: #eef5ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.profile-tag {
+
+    margin: 0 0 5px;
+
+    color: #155eef;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.profile-card h2 {
+
+    margin: 0 0 25px;
+
+    color: #172554;
+
+    font-size: 25px;
+
+}
+
+
+.profile-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+
+.profile-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+
+.profile-item span {
+
+    color: #64748b;
+
+    font-size: 13px;
+
+}
+
+
+.profile-item strong {
+
+    color: #1e293b;
+
+    font-size: 14px;
+
+    word-break: break-word;
+
+}
+
+
+.profile-logout {
+
+    display: block;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    margin-top: 25px;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+}
+
+
+.profile-logout:hover {
+
+    background: #fecaca;
+
+}
+
+
+/* ================================
+   NAVBAR LOGOUT
+   ================================ */
+
+.logout-btn {
+
+    background: #155eef !important;
+
+    color: white !important;
+
+    padding: 10px 17px !important;
+
+    border-radius: 8px !important;
+
+    font-weight: 600 !important;
+
+}
+
+
+.logout-btn:hover {
+
+    background: #0b4dcc !important;
+
+}
+
+
+/* ================================
+   FOOTER
+   ================================ */
+
+.dashboard-footer {
+
+    background: #172554;
+
+    color: white;
+
+    margin-top: 20px;
+
+}
+
+
+.footer-content {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 50px 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 40px;
+
+}
+
+
+.footer-content h2 {
+
+    margin: 0 0 10px;
+
+    font-size: 25px;
+
+}
+
+
+.footer-content h3 {
+
+    margin: 0 0 15px;
+
+    font-size: 17px;
+
+}
+
+
+.footer-content p {
+
+    color: #cbd5e1;
+
+    line-height: 1.6;
+
+}
+
+
+.footer-content a {
+
+    display: block;
+
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    margin-bottom: 10px;
+
+    transition: 0.3s;
+
+}
+
+
+.footer-content a:hover {
+
+    color: white;
+
+}
+
+
+.footer-bottom {
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    text-align: center;
+
+    padding: 20px;
+
+}
+
+
+.footer-bottom p {
+
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+}
+
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 900px) {
+
+    .dashboard-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .profile-card {
+
+        position: static;
+
+    }
+
+
+    .booking-card {
+
+        grid-template-columns: 220px 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .dashboard-hero {
+
+        padding: 45px 15px 35px;
+
+    }
+
+
+    .dashboard-hero h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .dashboard-container {
+
+        padding: 35px 15px 60px;
+
+    }
+
+
+    .section-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .booking-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .booking-card-image {
+
+        min-height: 220px;
+
+    }
+
+
+    .booking-card-image img {
+
+        min-height: 220px;
+
+        height: 220px;
+
+    }
+
+
+    .footer-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .dashboard-hero h1 {
+
+        font-size: 29px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .dashboard-book-btn {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .booking-card-content {
+
+        padding: 20px;
+
+    }
+
+
+    .booking-title-row {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .booking-title-row h3 {
+
+        font-size: 21px;
+
+    }
+
+
+    .booking-dates {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .booking-bottom {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .booking-total {
+
+        text-align: left;
+
+    }
+
+
+    .profile-card {
+
+        padding: 25px 20px;
+
+    }
+
+}
+
+/* =========================================================
+   FINAL BOOKING CARD FIX
+   ========================================================= */
+
+.bookings-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 25px !important;
+    width: 100% !important;
+}
+
+
+.booking-card {
+    display: grid !important;
+    grid-template-columns: 280px minmax(0, 1fr) !important;
+    width: 100% !important;
+    min-height: 280px !important;
+    background: #ffffff !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08) !important;
+}
+
+
+.booking-card-image {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 280px !important;
+    overflow: hidden !important;
+}
+
+
+.booking-card-image img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 280px !important;
+    object-fit: cover !important;
+}
+
+
+.booking-card-content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 25px !important;
+    background: #ffffff !important;
+}
+
+
+.booking-title-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 20px !important;
+}
+
+
+.booking-title-row h3 {
+    display: block !important;
+    margin: 0 !important;
+    color: #172554 !important;
+    font-size: 24px !important;
+}
+
+
+.booking-id {
+    display: inline-block !important;
+    color: #64748b !important;
+    background: #f1f5f9 !important;
+    padding: 6px 10px !important;
+    border-radius: 6px !important;
+}
+
+
+.booking-specs {
+    display: flex !important;
+    gap: 35px !important;
+    padding-bottom: 18px !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+
+.booking-spec {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+}
+
+
+.booking-spec span,
+.booking-dates span,
+.booking-bottom span {
+    display: block !important;
+    color: #64748b !important;
+    font-size: 13px !important;
+}
+
+
+.booking-spec strong,
+.booking-dates strong,
+.booking-bottom strong {
+    display: block !important;
+    color: #1e293b !important;
+    font-size: 15px !important;
+}
+
+
+.booking-dates {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    padding: 18px 0 !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+
+.booking-dates div {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+}
+
+
+.booking-bottom {
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: space-between !important;
+    padding-top: 18px !important;
+}
+
+
+.booking-bottom > div {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+}
+
+
+.booking-total {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: right !important;
+}
+
+
+.booking-total strong {
+    color: #155eef !important;
+    font-size: 22px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .booking-card {
+        grid-template-columns: 1fr !important;
+    }
+
+    .booking-card-image {
+        height: 230px !important;
+        min-height: 230px !important;
+    }
+
+    .booking-card-image img {
+        height: 230px !important;
+        min-height: 230px !important;
+    }
+
+    .booking-dates {
+        grid-template-columns: 1fr !important;
+    }
+
+    .booking-bottom {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+
+    .booking-total {
+        text-align: left !important;
+    }
+
+}

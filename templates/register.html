@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register - DriveEase</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <nav>
+
+        <div class="logo">
+            DriveEase
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/cars">Cars</a>
+
+            <a href="/login">Login</a>
+
+        </div>
+
+    </nav>
+</header>
+
+
+<main>
+
+    <section class="auth-section">
+
+        <div class="auth-box">
+
+            <p class="auth-tag">
+                JOIN DRIVEEASE
+            </p>
+
+            <h1>
+                Create Your Account
+            </h1>
+
+            <p class="auth-description">
+                Register to book your favourite car easily.
+            </p>
+
+
+            <form id="registerForm">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="confirm-booking"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <p class="auth-footer">
+
+                Already have an account?
+
+                <a href="/login">
+                    Login
+                </a>
+
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <h2>DriveEase</h2>
+
+            <p>
+                Your trusted car rental partner.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <a href="/">Home</a>
+
+            <a href="/cars">Cars</a>
+
+            <a href="/login">Login</a>
+
+        </div>
+
+
+        <div class="footer-contact">
+
+            <h3>Contact Us</h3>
+
+            <p>
+                New Delhi, India
+            </p>
+
+            <p>
+                +91 9876543210
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 DriveEase. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+const registerForm =
+    document.querySelector("#registerForm");
+
+
+registerForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.querySelector("#name").value;
+
+        const email =
+            document.querySelector("#email").value;
+
+        const phone =
+            document.querySelector("#phone").value;
+
+        const password =
+            document.querySelector("#password").value;
+
+
+        try {
+
+            const response =
+                await fetch("/api/register", {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        name: name,
+
+                        email: email,
+
+                        phone: phone,
+
+                        password: password
+
+                    })
+
+                });
+
+
+            const data =
+                await response.json();
+
+
+            if (data.success) {
+
+                alert(
+                    "Registration successful!\\n\\nYou can now login."
+                );
+
+                window.location.href =
+                    "/login";
+
+            } else {
+
+                alert(
+                    "Registration failed: " +
+                    data.message
+                );
+
+            }
+
+        }
+
+        catch (error) {
+
+            console.error(error);
+
+            alert(
+                "Could not connect to the DriveEase server."
+            );
+
+        }
+
+    });
+
+</script>
+
+</body>
+
+</html>
