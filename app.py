@@ -60,8 +60,19 @@ def get_cars():
 # CREATE BOOKING
 # ================================
 
+# ================================
+# CREATE BOOKING
+# ================================
+
 @app.route("/api/bookings", methods=["POST"])
 def create_booking():
+
+    # User must be logged in
+    if "user_id" not in session:
+        return jsonify({
+            "success": False,
+            "message": "Please login first before booking a car."
+        }), 401
 
     data = request.get_json()
 
