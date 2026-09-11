@@ -3776,3 +3776,27 @@ footer {
 .forgot-password a:hover {
     text-decoration: underline;
 }
+
+/* ================================
+   DRIVEEASE LOGO
+================================ */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    max-height: 55px;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px){
+    .logo img {
+        width: 115px;
+        max-height: 45px;
+    }
+}

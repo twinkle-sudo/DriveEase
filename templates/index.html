@@ -13,6 +13,7 @@
     <header>
         <nav>
             <div class="logo">
+                <img src="{{ url_for('static',filename='driveease-logo.png') }}" alt="DriveEase Logo">
                 DriveEase
             </div>
             <div class="nav-links">
@@ -48,13 +49,13 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="/cars">Explore Cars</a>
-                    <button>Book a Car</button>
+                    <a href="{{ url_for('cars_page') }}">Explore Cars</a>
+                    <a href="{{ url_for('cars_page') }}" class="hero-book-button">Book a Car</button>
                 </div>
             </div>
 
             <div class="hero-image">
-                <img src="car.jpg" alt="Luxury rental car">
+                <img src="{{ url_for('static',filename='car.jpg') }}" alt="Luxury rental car">
             </div>
         </section>
 
