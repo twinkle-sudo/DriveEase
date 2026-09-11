@@ -71,12 +71,12 @@ def add_default_cars():
 
     if count == 0:
         cars = [
-            ("BMW 3 Series", "Petrol", 5, 4500, "car.jpg", 1),
-            ("Mercedes-Benz C-Class", "Petrol", 5, 5500, "car1.jpg", 1),
-            ("Toyota Fortuner", "Diesel", 7, 4000, "car2.jpg", 0),
-            ("Lamborghini Urus", "Diesel", 5, 45000, "car3.jpg", 1),
-            ("Ferrari Roma", "Petrol", 2, 50000, "car4.jpg", 1),
-            ("Porsche 911 Carrera", "Diesel", 4, 32000, "car5.jpg", 1)
+            ("BMW 3 Series", "Petrol", 5, 4500, "car1.jpg", 1),
+            ("Mercedes-Benz C-Class", "Petrol", 5, 5500, "car2.jpg", 1),
+            ("Toyota Fortuner", "Diesel", 7, 4000, "car3.jpg", 0),
+            ("Lamborghini Urus", "Diesel", 5, 45000, "car4.jpg", 1),
+            ("Ferrari Roma", "Petrol", 2, 50000, "car5.jpg", 1),
+            ("Porsche 911 Carrera", "Diesel", 4, 32000, "car6.jpg", 1)
         ]
 
         cursor.executemany("""
@@ -84,9 +84,34 @@ def add_default_cars():
             (name, fuel, seats, price, image, available)
             VALUES (?, ?, ?, ?, ?, ?)
         """, cars)
+        
+        # Fix image names for existing cars
+connection.execute(
+    "UPDATE cars SET image = 'car1.jpg' WHERE name = 'BMW 3 Series'"
+)
 
-    connection.commit()
-    connection.close()
+connection.execute(
+    "UPDATE cars SET image = 'car2.jpg' WHERE name = 'Mercedes-Benz C-Class'"
+)
+
+connection.execute(
+    "UPDATE cars SET image = 'car3.jpg' WHERE name = 'Toyota Fortuner'"
+)
+
+connection.execute(
+    "UPDATE cars SET image = 'car4.jpg' WHERE name = 'Lamborghini Urus'"
+)
+
+connection.execute(
+    "UPDATE cars SET image = 'car5.jpg' WHERE name = 'Ferrari Roma'"
+)
+
+connection.execute(
+    "UPDATE cars SET image = 'car6.jpg' WHERE name = 'Porsche 911 Carrera'"
+)
+
+connection.commit()
+connection.close()
 
 
 if __name__ == "__main__":
