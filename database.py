@@ -86,32 +86,32 @@ def add_default_cars():
         """, cars)
         
         # Fix image names for existing cars
-connection.execute(
+        connection.execute(
     "UPDATE cars SET image = 'car1.jpg' WHERE name = 'BMW 3 Series'"
-)
+  )
 
-connection.execute(
+    connection.execute(
     "UPDATE cars SET image = 'car2.jpg' WHERE name = 'Mercedes-Benz C-Class'"
 )
 
-connection.execute(
+    connection.execute(
     "UPDATE cars SET image = 'car3.jpg' WHERE name = 'Toyota Fortuner'"
 )
 
-connection.execute(
+    connection.execute(
     "UPDATE cars SET image = 'car4.jpg' WHERE name = 'Lamborghini Urus'"
 )
 
-connection.execute(
+    connection.execute(
     "UPDATE cars SET image = 'car5.jpg' WHERE name = 'Ferrari Roma'"
 )
 
-connection.execute(
+    connection.execute(
     "UPDATE cars SET image = 'car6.jpg' WHERE name = 'Porsche 911 Carrera'"
 )
 
-connection.commit()
-connection.close()
+    connection.commit()
+    connection.close()
 
 
 if __name__ == "__main__":
