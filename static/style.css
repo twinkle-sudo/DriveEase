@@ -3800,3 +3800,36 @@ footer {
         max-height: 45px;
     }
 }
+
+/* Remove unwanted underlines from links */
+a {
+    text-decoration: none;
+}
+
+/* Keep navigation links clean */
+.nav-links a {
+    text-decoration: none;
+}
+
+/* Featured cars section */
+.section-heading a,
+.section-heading h2,
+.section-heading p {
+    text-decoration: none;
+}
+
+/* Remove unwanted text underlines */
+.section-heading,
+.section-heading p,
+.section-heading h2 {
+    text-decoration: none;
+}
+
+.section-heading p,
+.section-heading h2 {
+    border-bottom: none;
+}
+
+.a {
+    text-decoration: none;
+}
