@@ -14,9 +14,9 @@
     <div class="logo">DriveEase</div>
 
     <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/cars">Cars</a>
-        <a href="/register">Register</a>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('cars_page') }}">Cars</a>
+        <a href="{{ url_for('register_page') }}">Register</a>
     </div>
 </nav>
 
@@ -35,6 +35,7 @@
         <form id="loginForm">
 
             <label for="loginEmail">Email Address</label>
+
             <input
                 type="email"
                 id="loginEmail"
@@ -43,12 +44,19 @@
             >
 
             <label for="loginPassword">Password</label>
+
             <input
                 type="password"
                 id="loginPassword"
                 placeholder="Enter your password"
                 required
             >
+
+            <div class="forgot-password">
+                <a href="{{ url_for('forgot_password_page') }}">
+                    Forgot Password?
+                </a>
+            </div>
 
             <button type="submit" class="auth-button">
                 Login
@@ -58,7 +66,7 @@
 
         <p class="auth-footer">
             Don't have an account?
-            <a href="/register">Create Account</a>
+            <a href="{{ url_for('register_page') }}">Create Account</a>
         </p>
 
     </div>
@@ -66,6 +74,7 @@
 </section>
 
 <script>
+
 const loginForm = document.querySelector("#loginForm");
 
 loginForm.addEventListener("submit", async function(event) {
@@ -96,13 +105,17 @@ loginForm.addEventListener("submit", async function(event) {
 
         if (data.success) {
 
-            alert("Login successful!\\n\\nWelcome, " + data.user.name);
+            alert(
+                "Login successful!\n\nWelcome, " +
+                data.user.name
+            );
 
             window.location.href = "/";
 
         } else {
 
             alert(data.message);
+
         }
 
     } catch (error) {
@@ -110,9 +123,11 @@ loginForm.addEventListener("submit", async function(event) {
         alert("Something went wrong. Please try again.");
 
         console.error(error);
+
     }
 
 });
+
 </script>
 
 </body>

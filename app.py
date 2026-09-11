@@ -229,8 +229,84 @@ def register():
         "message": "Registration successful!"
     }), 201
     
+    
+    # ================================
+# FORGOT PASSWORD
+# ================================
+
+@app.route("/forgot-password")
+def forgot_password_page():
+
+    return render_template("forgot_password.html")
 
 
+@app.route("/api/forgot-password", methods=["POST"])
+def forgot_password():
+
+    data = request.get_json()
+
+    email = data.get("email")
+    phone = data.get("phone")
+    new_password = data.get("new_password")
+
+    if not email or not phone or not new_password:
+
+        return jsonify({
+            "success": False,
+            "message": "All fields are required."
+        }), 400
+
+
+    if len(new_password) < 6:
+
+        return jsonify({
+            "success": False,
+            "message": "Password must be at least 6 characters."
+        }), 400
+
+
+    connection = get_db_connection()
+
+
+    user = connection.execute(
+        """
+        SELECT * FROM users
+        WHERE email = ? AND phone = ?
+        """,
+        (email, phone)
+    ).fetchone()
+
+
+    if not user:
+
+        connection.close()
+
+        return jsonify({
+            "success": False,
+            "message": "Email and contact number do not match our records."
+        }), 404
+
+
+    connection.execute(
+        """
+        UPDATE users
+        SET password = ?
+        WHERE id = ?
+        """,
+        (new_password, user["id"])
+    )
+
+
+    connection.commit()
+    connection.close()
+
+
+    return jsonify({
+        "success": True,
+        "message": "Password reset successfully!"
+    }), 200
+
+ 
 # ================================
 # RUN SERVER
 # ================================

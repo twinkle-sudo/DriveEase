@@ -3756,3 +3756,23 @@ footer {
     }
 
 }
+
+/* ================================
+   FORGOT PASSWORD
+================================ */
+
+.forgot-password {
+    text-align: right;
+    margin: 8px 0 18px;
+}
+
+.forgot-password a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
