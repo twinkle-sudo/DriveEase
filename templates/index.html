@@ -16,11 +16,11 @@
                 DriveEase
             </div>
             <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/cars">Cars</a>
-                <a href="/#about">About</a>
-                <a href="/#contact">Contact</a>
-                <a href ="/cars" class="navBookButton">Book Now</a>
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('cars_page') }}">Cars</a>
+                <a href="{{ url_for('home') }} #about"> About</a>
+                <a href="{{ url_for('home') }}#contact">Contact</a>
+                <a href ="{{ url_for('cars_page') }}cars" class="navBookButton">Book Now</a>
             </div>
         </nav>
     </header>

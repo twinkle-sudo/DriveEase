@@ -9,7 +9,7 @@ if (bookButton) {
 
     bookButton.addEventListener("click", function () {
 
-        window.location.href = "cars.html";
+        window.location.href = "/cars";
 
     });
 
