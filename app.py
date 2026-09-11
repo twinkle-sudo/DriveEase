@@ -289,6 +289,8 @@ def my_bookings():
 
     if "user_id" not in session:
         return redirect(url_for("login_page"))
+    
+    return redirect(url_for("dashboard"))
 
     connection = get_db_connection()
 
