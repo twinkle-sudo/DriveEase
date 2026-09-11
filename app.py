@@ -234,6 +234,10 @@ def register():
 # FORGOT PASSWORD
 # ================================
 
+@app.route("/forgot-password")
+def forgot_password_page():
+    return render_template("forgot_password.html")
+
 @app.route("/api/forgot-password", methods=["POST"])
 def forgot_password():
 
