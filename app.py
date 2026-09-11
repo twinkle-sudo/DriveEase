@@ -55,11 +55,6 @@ def get_cars():
 
     return jsonify([dict(car) for car in cars])
 
-
-# ================================
-# CREATE BOOKING
-# ================================
-
 # ================================
 # CREATE BOOKING
 # ================================
@@ -268,9 +263,10 @@ def forgot_password():
         """
         SELECT id
         FROM users
-        WHERE email = ? AND phone = ?
+        WHERE LOWER(TRIM(email)) = LOWER(TRIM(?)) 
+        AND TRIM(phone) = TRIM(?)
         """,
-        (email.strip(), phone.strip())
+        (email,phone)
     ).fetchone()
 
     # No matching account
